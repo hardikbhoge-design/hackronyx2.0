@@ -57,22 +57,14 @@ export function LoginPage({ onLogin, onNavigateToSignup }: SignInPageProps) {
     if (googleStatus === 'loading' || githubStatus === 'loading') return;
     sound.playClick()
     setGoogleStatus('loading')
-    // Simulate OAuth / Auth framework behavior integrating with existing architecture
-    setTimeout(() => {
-      setGoogleStatus('success')
-      onLogin()
-    }, 1500)
+    window.location.href = 'http://localhost:8000/api/auth/google'
   }
 
   const handleGithubLogin = () => {
     if (googleStatus === 'loading' || githubStatus === 'loading') return;
     sound.playClick()
     setGithubStatus('loading')
-    // Simulate OAuth / Auth framework behavior integrating with existing architecture
-    setTimeout(() => {
-      setGithubStatus('success')
-      onLogin()
-    }, 1500)
+    window.location.href = 'http://localhost:8000/api/auth/github'
   }
 
   return (
