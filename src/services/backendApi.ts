@@ -2,7 +2,7 @@
 // Connects to the FastAPI REST server running at localhost:8000
 // Falls back gracefully to demo mode if backend is offline
 
-const API_BASE = 'http://localhost:8000';
+const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 const TIMEOUT_MS = 8000; // workflow can be slow, give it more time
 
 export type BackendStatus = 'CHECKING' | 'ONLINE' | 'OFFLINE';

@@ -57,14 +57,14 @@ export function LoginPage({ onLogin, onNavigateToSignup }: SignInPageProps) {
     if (googleStatus === 'loading' || githubStatus === 'loading') return;
     sound.playClick()
     setGoogleStatus('loading')
-    window.location.href = 'http://localhost:8000/api/auth/google'
+    window.location.href = `${import.meta.env.VITE_API_URL}/api/auth/google`
   }
 
   const handleGithubLogin = () => {
     if (googleStatus === 'loading' || githubStatus === 'loading') return;
     sound.playClick()
     setGithubStatus('loading')
-    window.location.href = 'http://localhost:8000/api/auth/github'
+    window.location.href = `${import.meta.env.VITE_API_URL}/api/auth/github`
   }
 
   return (
